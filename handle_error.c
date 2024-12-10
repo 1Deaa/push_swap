@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   handle_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:59:08 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/10 14:54:40 by drahwanj         ###   ########.fr       */
+/*   Created: 2024/12/10 19:16:25 by drahwanj          #+#    #+#             */
+/*   Updated: 2024/12/10 19:16:38 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void    handle_error(t_Node **head)
 {
-	t_Node	*head;
-
-	head = NULL;
-	printf("Linked List: \n");
-	fill_list(&head, argv, argc);
-	print_list(head);
-	deallocate_list(&head);
+    deallocate_list(head);
+    write(1, "Error\n", 6);
+    exit(2);
 }

@@ -1,8 +1,10 @@
-SRCS = main.c
+SRCS = push_swap.c list.c ft_atol.c handle_error.c
 
 CC = cc
 
 RM = rm -rf
+
+CFLAGS = -Wall -Wextra -Werror
 
 OBJS = $(SRCS:.c=.o)
 
@@ -11,8 +13,17 @@ NAME = push_swap
 all: $(NAME)
 	
 $(NAME): $(OBJS)
-	
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@$(RM) $(OBJS)
+
+fclean:
+	@$(RM) $(OBJS) $(NAME)
+
+re: fclean all
 
 .PHONY: all fclean clean re
