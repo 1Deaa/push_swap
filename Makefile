@@ -1,4 +1,4 @@
-SRCS = push_swap.c list.c ft_atol.c handle_error.c
+SRCS = push_swap.c list.c ft_atol.c handle_error.c check_order.c small_sort.c sa.c pa.c pb.c find_highest.c ra.c rra.c
 
 CC = cc
 

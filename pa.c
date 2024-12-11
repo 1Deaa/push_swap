@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:59:08 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/10 14:54:40 by drahwanj         ###   ########.fr       */
+/*   Created: 2024/12/11 17:02:18 by drahwanj          #+#    #+#             */
+/*   Updated: 2024/12/11 17:02:19 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void    pa(t_Node **a, t_Node **b)
 {
-	t_Node	*head;
+    t_Node  *temp;
 
-	head = NULL;
-	fill_list(&head, argv, argc);
-	if (check_order(&head) == 1 || argc < 3)
-	{
-		deallocate_list(&head);
-		return (0);
-	}
-	if (argc < 7)
-	{
-		small_sort(&head, argc);
-	}
-	print_list(head);
-	deallocate_list(&head);
+    if (*b == NULL)
+        return ;
+    temp = *b;
+    *b = (*b)->next;
+    temp->next = *a;
+    *a = temp;
+    write(1, "pa\n", 3);
 }

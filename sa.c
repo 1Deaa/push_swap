@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:59:08 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/10 14:54:40 by drahwanj         ###   ########.fr       */
+/*   Created: 2024/12/11 16:16:51 by drahwanj          #+#    #+#             */
+/*   Updated: 2024/12/11 16:16:52 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void    sa(t_Node **head)
 {
-	t_Node	*head;
+    t_Node  *first;
+    t_Node  *second;
 
-	head = NULL;
-	fill_list(&head, argv, argc);
-	if (check_order(&head) == 1 || argc < 3)
-	{
-		deallocate_list(&head);
-		return (0);
-	}
-	if (argc < 7)
-	{
-		small_sort(&head, argc);
-	}
-	print_list(head);
-	deallocate_list(&head);
+    first = *head;
+    second = (*head)->next;
+    if (*head == NULL || (*head)->next == NULL)
+        return ;
+    first->next = second->next;
+    second->next = first;
+    *head = second;
+    write(1, "sa\n", 3);
 }

@@ -30,5 +30,13 @@ void	print_list(t_Node *head);
 void	deallocate_list(t_Node **head);
 int    ft_atol(const char *str, t_Node **head);
 void    handle_error(t_Node **head);
+int    check_order(t_Node **head);
+void    sa(t_Node **head);
+void    pb(t_Node **a, t_Node **b);
+void    pa(t_Node **a, t_Node **b);
+void    ra(t_Node **head);
+void    rra(t_Node **head);
+void    small_sort(t_Node **head, int argc);
+t_Node  *find_highest(t_Node **head);
 
 #endif
