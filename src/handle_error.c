@@ -6,15 +6,15 @@
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:16:25 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/10 19:16:38 by drahwanj         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:44:08 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    handle_error(t_Node **head)
+void	handle_error(t_Node **head)
 {
-    deallocate_list(head);
-    write(1, "Error\n", 6);
-    exit(2);
+	deallocate_list(head);
+	ft_printf("Error\n");
+	exit(2);
 }

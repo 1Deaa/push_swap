@@ -1,5 +1,5 @@
 SOURCE	=	push_swap.c list.c ft_atol.c handle_error.c check_order.c \
-			small_sort.c find_highest.c sort_util.c
+			small_sort.c find_highest.c sort_util.c find_smallest.c \
 
 SRCS_DIR= src
 
