@@ -40,16 +40,12 @@ BLINK = \e[5m
 all: $(HEADER) $(NAME) 
 
 $(HEADER): 
-	@echo "$(RED)███████╗████████╗  ██████╗░██████╗░██╗███╗░░██╗████████╗███████╗"
-	@echo "$(RED)██╔════╝╚══██╔══╝  ██╔══██╗██╔══██╗██║████╗░██║╚══██╔══╝██╔════╝"
-	@echo "$(RED)█████╗░░░░░██║░░░  ██████╔╝██████╔╝██║██╔██╗██║░░░██║░░░█████╗░░"
-	@echo "$(RED)██╔══╝░░░░░██║░░░  ██╔═══╝░██╔══██╗██║██║╚████║░░░██║░░░██╔══╝░░"
-	@echo "$(RED)██║░░░░░░░░██║░░░  ██║░░░░░██║░░██║██║██║░╚███║░░░██║░░░██║░░░░░"
-	@echo "$(RED)╚═╝░░░░░░░░╚═╝░░░  ╚═╝░░░░░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░░░░"
+	@echo "$(RED)█▀▀ ▀█▀ ▄▄ █▀█ █▀█ █ █▄ █ ▀█▀ █▀▀"
+	@echo "$(RED)█▀   █     █▀▀ █▀▄ █ █ ▀█  █  █▀ $(RESET)"
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(GREEN)✔ $(MAGENTA)created $(CYAN)library$(MAGENTA) file!"
+	@echo "$(GREEN)✔ $(MAGENTA)created $(CYAN)libftprintf.a$(MAGENTA) succesfully!$(RESET)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -57,11 +53,11 @@ $(NAME): $(OBJS)
 
 clean:
 	@$(RM) $(OBJS)
-	@echo "$(WHITE)· $(RED)all object files were deleted!"
+	@echo "$(WHITE)· $(RED)all object files were deleted!$(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(WHITE)·$(RED) library file was deleted!"
+	@echo "$(WHITE)·$(RED) library file was deleted!$(RESET)"
 
 re: fclean all
 

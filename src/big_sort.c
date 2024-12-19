@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 15:59:08 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/14 15:44:44 by drahwanj         ###   ########.fr       */
+/*   Created: 2024/12/19 19:49:35 by drahwanj          #+#    #+#             */
+/*   Updated: 2024/12/19 22:33:28 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	big_sort(t_Node **head, t_Node **b)
 {
-	t_Node	*head;
-	t_Node	*b;
+	int	smallest;
 
-	b = NULL;
-	head = NULL;
-	fill_list(&head, argv, argc);
-	if (check_order(&head) == 1 || argc < 3)
+	smallest = 0;
+	while (*head)
 	{
-		deallocate_list(&head);
-		return (0);
+		smallest = (find_smallest(head))->data;
+		while ((*head)->data != smallest)
+			rra(head);
+		pb(head, b);
 	}
-	if (argc < 6)
-	{
-		small_sort(&head, &b, argc);
-		print_list(head);
-		deallocate_list(&head);
-		return (0);
-	}
-	big_sort(&head, &b);
-	print_list(head);
-	deallocate_list(&head);
+	while (*b)
+		pa(head, b);
 }

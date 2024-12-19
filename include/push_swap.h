@@ -6,7 +6,7 @@
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:43:06 by drahwanj          #+#    #+#             */
-/*   Updated: 2024/12/14 16:08:11 by drahwanj         ###   ########.fr       */
+/*   Updated: 2024/12/19 22:31:06 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ void	pb(t_Node **a, t_Node **b);
 void	pa(t_Node **a, t_Node **b);
 void	ra(t_Node **head);
 void	rra(t_Node **head);
-void	small_sort(t_Node **head, int argc);
+void	small_sort(t_Node **head, t_Node **b, int argc);
 t_Node	*find_highest(t_Node **head);
 t_Node	*find_smallest(t_Node **head);
+void	big_sort(t_Node **head, t_Node **b);
 
 #endif
