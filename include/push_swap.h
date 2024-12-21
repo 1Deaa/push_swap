@@ -38,8 +38,9 @@ void	pa(t_Node **a, t_Node **b);
 void	ra(t_Node **head);
 void	rra(t_Node **head);
 void	small_sort(t_Node **head, t_Node **b, int argc);
+void	big_sort(t_Node **head, t_Node **b, int argc);
 t_Node	*find_highest(t_Node **head);
 t_Node	*find_smallest(t_Node **head);
-void	big_sort(t_Node **head, t_Node **b);
+void	quicksort_arr(int array[], int length);
 
 #endif

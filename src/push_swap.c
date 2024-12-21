@@ -28,11 +28,11 @@ int	main(int argc, char *argv[])
 	if (argc < 6)
 	{
 		small_sort(&head, &b, argc);
-		print_list(head);
+		//print_list(head);
 		deallocate_list(&head);
 		return (0);
 	}
-	big_sort(&head, &b);
-	print_list(head);
+	big_sort(&head, &b, argc);
+	//print_list(head);
 	deallocate_list(&head);
 }

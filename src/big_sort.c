@@ -12,18 +12,58 @@
 
 #include "push_swap.h"
 
-void	big_sort(t_Node **head, t_Node **b)
+static void	quick_fill_sort(t_Node **head, int *array, int argc)
 {
-	int	smallest;
+	t_Node	*loop;
+	int		i;
 
-	smallest = 0;
+	i = 0;
+	loop = *head;
+	while (loop != NULL)
+	{
+		array[i] = loop->data;
+		loop = loop->next;
+		i++;
+	}
+	quicksort_arr(array, argc - 1);
+}
+
+int	search_array(int *array, int target, int start, int end)
+{
+	int	i;
+
+	i = start;
+	while (i <= end)
+	{
+		if (target == array[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void	big_sort(t_Node **head, t_Node **b, int argc)
+{
+	int		*array;
+	int	partition_size;
+	int	i;
+	int push_count;
+
+	(void)b;
+	push_count = 0;
+	i = 0;
+	partition_size = (argc - 1) / 5; // argc = 25 -> part = 5
+	
+	quick_fill_sort(head, array, argc);
 	while (*head)
 	{
-		smallest = (find_smallest(head))->data;
-		while ((*head)->data != smallest)
-			rra(head);
-		pb(head, b);
+		if (i == partition_size - 1)
+			partition_size += partition_size;
+		if (search_array(array, (*head)->data, i, partition_size - 1))
+		{
+			pb(head, b); // how many I pushed compare with partition_size
+			push_count++;
+		}
+		ra(head);
 	}
-	while (*b)
-		pa(head, b);
 }
